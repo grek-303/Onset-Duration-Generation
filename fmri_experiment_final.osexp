@@ -1,0 +1,1117 @@
+---
+API: 2.1
+OpenSesame: 3.3.12
+Platform: nt
+---
+set width 680
+set uniform_coordinates no
+set title "Face Interval Estimation"
+set subject_parity even
+set subject_nr 0
+set start experiment
+set sound_sample_size -16
+set sound_freq 48000
+set sound_channels 2
+set sound_buf_size 1024
+set sampler_backend psycho
+set round_decimals 2
+set mouse_backend psycho
+set keyboard_backend psycho
+set height 768
+set fullscreen no
+set form_clicks no
+set foreground black
+set font_underline no
+set font_size 24
+set font_italic no
+set font_family mono
+set font_bold no
+set experiment_path "C:\\TASKS\\CNC\\fCourse2024_Ctrack\\cognition"
+set disable_garbage_collection no
+set description "The main experiment item"
+set color_backend psycho
+set clock_backend psycho
+set canvas_backend psycho
+set background "#ADADAD"
+
+define sketchpad ISI_sketchpad
+	set duration 500
+	set description "Displays stimuli"
+	draw fixdot color=white show_if=True style=default x=0 y=0 z_index=0
+
+define sketchpad Sample_interval_sketchpad
+	set duration "[interval]"
+	set description "Displays stimuli"
+	draw image center=1 file="[image]" scale=1.4999999999999996 show_if=True x=0 y=0 z_index=0
+
+define sketchpad baseline_block_sketchpad
+	set duration 19500
+	set description "Stimuli weergeven"
+	draw textline center=1 color=black font_bold=no font_family=mono font_italic=no font_size=50 html=yes show_if=True text="+" x=0 y=0 z_index=0
+
+define loop block1_loop
+	set source table
+	set repeat 1
+	set order sequential
+	set description "Repeatedly runs another item"
+	set cycles 32
+	set continuous no
+	set break_if_on_first yes
+	set break_if never
+	setcycle 0 Memorable 1
+	setcycle 0 Repetition 1
+	setcycle 0 interval 600
+	setcycle 0 image "Google_1_Nathan Kiger_3_oval.jpg"
+	setcycle 0 probe "Google_1_Nathan Kiger_3_oval.jpg"
+	setcycle 1 Memorable 1
+	setcycle 1 Repetition 0
+	setcycle 1 interval 1200
+	setcycle 1 image "Google_1_Jonathan Marek_13_oval.jpg"
+	setcycle 1 probe "Google_1_Louis Somerville_13_oval.jpg"
+	setcycle 2 Memorable 1
+	setcycle 2 Repetition 1
+	setcycle 2 interval 1200
+	setcycle 2 image "Google_1_Gregory Moreira_17_oval.jpg"
+	setcycle 2 probe "Google_1_Gregory Moreira_17_oval.jpg"
+	setcycle 3 Memorable 1
+	setcycle 3 Repetition 1
+	setcycle 3 interval 1000
+	setcycle 3 image "Google_1_Inez Hofer_5_oval.jpg"
+	setcycle 3 probe "Google_1_Inez Hofer_5_oval.jpg"
+	setcycle 4 Memorable 0
+	setcycle 4 Repetition 0
+	setcycle 4 interval 800
+	setcycle 4 image "Google_1_Fred Berube_15_oval.jpg"
+	setcycle 4 probe "Google_1_Kristin Skelly_3_oval.jpg"
+	setcycle 5 Memorable 1
+	setcycle 5 Repetition 0
+	setcycle 5 interval 800
+	setcycle 5 image "Brian_Friedrich_19_oval.jpg"
+	setcycle 5 probe "Google_1_Frank Luke_9_oval.jpg"
+	setcycle 6 Memorable 0
+	setcycle 6 Repetition 1
+	setcycle 6 interval 600
+	setcycle 6 image "Google_1_Michael Turcotte_13_oval.jpg"
+	setcycle 6 probe "Google_1_Michael Turcotte_13_oval.jpg"
+	setcycle 7 Memorable 0
+	setcycle 7 Repetition 1
+	setcycle 7 interval 1200
+	setcycle 7 image "Google_1_Paul Sun_9_oval.jpg"
+	setcycle 7 probe "Google_1_Paul Sun_9_oval.jpg"
+	setcycle 8 Memorable 0
+	setcycle 8 Repetition 1
+	setcycle 8 interval 1200
+	setcycle 8 image "Google_1_Kara Tsang_15_oval.jpg"
+	setcycle 8 probe "Google_1_Kara Tsang_15_oval.jpg"
+	setcycle 9 Memorable 0
+	setcycle 9 Repetition 0
+	setcycle 9 interval 800
+	setcycle 9 image "Google_1_Larry Perryman_5_oval.jpg"
+	setcycle 9 probe "Allison_Samson_13_oval.jpg"
+	setcycle 10 Memorable 0
+	setcycle 10 Repetition 1
+	setcycle 10 interval 600
+	setcycle 10 image "Google_1_Molly Mccants_15_oval.jpg"
+	setcycle 10 probe "Google_1_Molly Mccants_15_oval.jpg"
+	setcycle 11 Memorable 0
+	setcycle 11 Repetition 1
+	setcycle 11 interval 800
+	setcycle 11 image "Google_1_Keith Priester_5_oval.jpg"
+	setcycle 11 probe "Google_1_Keith Priester_5_oval.jpg"
+	setcycle 12 Memorable 1
+	setcycle 12 Repetition 1
+	setcycle 12 interval 600
+	setcycle 12 image "Google_1_Pamela Bermudez_3_oval.jpg"
+	setcycle 12 probe "Google_1_Pamela Bermudez_3_oval.jpg"
+	setcycle 13 Memorable 0
+	setcycle 13 Repetition 0
+	setcycle 13 interval 1200
+	setcycle 13 image "Google_1_Stephen Masterson_7_oval.jpg"
+	setcycle 13 probe "Google_1_Robert Ross_11_oval.jpg"
+	setcycle 14 Memorable 1
+	setcycle 14 Repetition 1
+	setcycle 14 interval 1000
+	setcycle 14 image "Google_1_Ernest Swisher_9_oval.jpg"
+	setcycle 14 probe "Google_1_Ernest Swisher_9_oval.jpg"
+	setcycle 15 Memorable 1
+	setcycle 15 Repetition 1
+	setcycle 15 interval 1200
+	setcycle 15 image "Google_1_Carlos Diep_19_oval.jpg"
+	setcycle 15 probe "Google_1_Carlos Diep_19_oval.jpg"
+	setcycle 16 Memorable 0
+	setcycle 16 Repetition 1
+	setcycle 16 interval 600
+	setcycle 16 image "Google_1_Erica Vue_9_oval.jpg"
+	setcycle 16 probe "Google_1_Erica Vue_9_oval.jpg"
+	setcycle 17 Memorable 0
+	setcycle 17 Repetition 1
+	setcycle 17 interval 1200
+	setcycle 17 image "Google_1_Victor Ellinger_16_oval.jpg"
+	setcycle 17 probe "Google_1_Victor Ellinger_16_oval.jpg"
+	setcycle 18 Memorable 1
+	setcycle 18 Repetition 0
+	setcycle 18 interval 1000
+	setcycle 18 image "Google_1_Patsy Steadman_3_oval.jpg"
+	setcycle 18 probe "Google_1_Carolyn Kiley_7_oval.jpg"
+	setcycle 19 Memorable 1
+	setcycle 19 Repetition 0
+	setcycle 19 interval 1200
+	setcycle 19 image "Google_1_Russell Baeza_13_oval.jpg"
+	setcycle 19 probe "Google_1_Marjorie Petty_11_oval.jpg"
+	setcycle 20 Memorable 1
+	setcycle 20 Repetition 0
+	setcycle 20 interval 1000
+	setcycle 20 image "Google_1_Glenn Leyba_19_oval.jpg"
+	setcycle 20 probe "Google_1_Gregory Heflin_9_oval.jpg"
+	setcycle 21 Memorable 0
+	setcycle 21 Repetition 0
+	setcycle 21 interval 1000
+	setcycle 21 image "Google_1_Vicky Weis_15_oval.jpg"
+	setcycle 21 probe "Google_1_Jonathan Bozarth_17_oval.jpg"
+	setcycle 22 Memorable 1
+	setcycle 22 Repetition 0
+	setcycle 22 interval 1200
+	setcycle 22 image "Google_1_Justin Woodard_15_oval.jpg"
+	setcycle 22 probe "Google_1_Laura Hines_7_oval.jpg"
+	setcycle 23 Memorable 1
+	setcycle 23 Repetition 1
+	setcycle 23 interval 1200
+	setcycle 23 image "Google_1_Kristin Catalan_7_oval.jpg"
+	setcycle 23 probe "Google_1_Kristin Catalan_7_oval.jpg"
+	setcycle 24 Memorable 0
+	setcycle 24 Repetition 0
+	setcycle 24 interval 1200
+	setcycle 24 image "Google_1_Barbara Oakes_13_oval.jpg"
+	setcycle 24 probe "Albert_Waring_1_oval.jpg"
+	setcycle 25 Memorable 1
+	setcycle 25 Repetition 0
+	setcycle 25 interval 1200
+	setcycle 25 image "Google_1_Lorraine Byrd_9_oval.jpg"
+	setcycle 25 probe "Google_1_Irene Dow_11_oval.jpg"
+	setcycle 26 Memorable 1
+	setcycle 26 Repetition 1
+	setcycle 26 interval 800
+	setcycle 26 image "Google_1_Sheryl Oneil_18_oval.jpg"
+	setcycle 26 probe "Google_1_Sheryl Oneil_18_oval.jpg"
+	setcycle 27 Memorable 0
+	setcycle 27 Repetition 0
+	setcycle 27 interval 1000
+	setcycle 27 image "Google_1_Alice Pryor_9_oval.jpg"
+	setcycle 27 probe "Google_1_Ann Silvey_3_oval.jpg"
+	setcycle 28 Memorable 0
+	setcycle 28 Repetition 1
+	setcycle 28 interval 1000
+	setcycle 28 image "Google_1_Howard Matthews_5_oval.jpg"
+	setcycle 28 probe "Google_1_Howard Matthews_5_oval.jpg"
+	setcycle 29 Memorable 0
+	setcycle 29 Repetition 0
+	setcycle 29 interval 1000
+	setcycle 29 image "Google_1_Mike Holton_15_oval.jpg"
+	setcycle 29 probe "Google_1_Cindy Mcdougald_11_oval.jpg"
+	setcycle 30 Memorable 0
+	setcycle 30 Repetition 1
+	setcycle 30 interval 800
+	setcycle 30 image "Google_1_Stanley Guzman_1_oval.jpg"
+	setcycle 30 probe "Google_1_Stanley Guzman_1_oval.jpg"
+	setcycle 31 Memorable 1
+	setcycle 31 Repetition 0
+	setcycle 31 interval 600
+	setcycle 31 image "Google_1_Harold Gravitt_1_oval.jpg"
+	setcycle 31 probe "Google_1_Viola Sorrell_9_oval.jpg"
+	run trial_sequence
+
+define loop block2_loop
+	set source table
+	set repeat 1
+	set order sequential
+	set description "Repeatedly runs another item"
+	set cycles 32
+	set continuous no
+	set break_if_on_first yes
+	set break_if never
+	setcycle 0 Memorable 0
+	setcycle 0 Repetition 1
+	setcycle 0 interval 1200
+	setcycle 0 image "Google_1_Roy Bieber_7_oval.jpg"
+	setcycle 0 probe "Google_1_Roy Bieber_7_oval.jpg"
+	setcycle 1 Memorable 1
+	setcycle 1 Repetition 0
+	setcycle 1 interval 600
+	setcycle 1 image "Google_1_Jonathan Marek_5_oval.jpg"
+	setcycle 1 probe "Google_1_Barbara Zimmerman_2_oval.jpg"
+	setcycle 2 Memorable 0
+	setcycle 2 Repetition 0
+	setcycle 2 interval 600
+	setcycle 2 image "Google_1_Paula Faber_15_oval.jpg"
+	setcycle 2 probe "Google_1_Jeffery Rosenberg_18_oval.jpg"
+	setcycle 3 Memorable 1
+	setcycle 3 Repetition 1
+	setcycle 3 interval 1200
+	setcycle 3 image "Google_1_Janie Butcher_3_oval.jpg"
+	setcycle 3 probe "Google_1_Janie Butcher_3_oval.jpg"
+	setcycle 4 Memorable 0
+	setcycle 4 Repetition 0
+	setcycle 4 interval 600
+	setcycle 4 image "Alan_Gamerson_7_oval.jpg"
+	setcycle 4 probe "Google_1_David Prosser_18_oval.jpg"
+	setcycle 5 Memorable 0
+	setcycle 5 Repetition 1
+	setcycle 5 interval 600
+	setcycle 5 image "Google_1_Larry Atwater_3_oval.jpg"
+	setcycle 5 probe "Google_1_Larry Atwater_3_oval.jpg"
+	setcycle 6 Memorable 1
+	setcycle 6 Repetition 1
+	setcycle 6 interval 1200
+	setcycle 6 image "Google_1_Steve Moyers_19_oval.jpg"
+	setcycle 6 probe "Google_1_Steve Moyers_19_oval.jpg"
+	setcycle 7 Memorable 1
+	setcycle 7 Repetition 0
+	setcycle 7 interval 800
+	setcycle 7 image "Google_1_Margaret Wilkerson_3_oval.jpg"
+	setcycle 7 probe "Google_1_Shawn Walling_3_oval.jpg"
+	setcycle 8 Memorable 0
+	setcycle 8 Repetition 1
+	setcycle 8 interval 1000
+	setcycle 8 image "Google_1_Jerry Keane_3_oval.jpg"
+	setcycle 8 probe "Google_1_Jerry Keane_3_oval.jpg"
+	setcycle 9 Memorable 0
+	setcycle 9 Repetition 0
+	setcycle 9 interval 600
+	setcycle 9 image "Google_1_Sara Claytor_7_oval.jpg"
+	setcycle 9 probe "Google_1_Carolyn Kiley_3_oval.jpg"
+	setcycle 10 Memorable 1
+	setcycle 10 Repetition 1
+	setcycle 10 interval 1000
+	setcycle 10 image "Google_1_Melissa Cushing_19_oval.jpg"
+	setcycle 10 probe "Google_1_Melissa Cushing_19_oval.jpg"
+	setcycle 11 Memorable 1
+	setcycle 11 Repetition 0
+	setcycle 11 interval 600
+	setcycle 11 image "Google_1_Joshua Guido_13_oval.jpg"
+	setcycle 11 probe "Google_1_Peter Mcclary_13_oval.jpg"
+	setcycle 12 Memorable 0
+	setcycle 12 Repetition 1
+	setcycle 12 interval 1200
+	setcycle 12 image "Google_1_Anthony Riddell_7_oval.jpg"
+	setcycle 12 probe "Google_1_Anthony Riddell_7_oval.jpg"
+	setcycle 13 Memorable 0
+	setcycle 13 Repetition 1
+	setcycle 13 interval 800
+	setcycle 13 image "Google_1_Victor Potter_13_oval.jpg"
+	setcycle 13 probe "Google_1_Victor Potter_13_oval.jpg"
+	setcycle 14 Memorable 1
+	setcycle 14 Repetition 1
+	setcycle 14 interval 1200
+	setcycle 14 image "Google_1_Gwendolyn Vance_152_oval.jpg"
+	setcycle 14 probe "Google_1_Gwendolyn Vance_152_oval.jpg"
+	setcycle 15 Memorable 0
+	setcycle 15 Repetition 1
+	setcycle 15 interval 600
+	setcycle 15 image "Google_1_Arthur Featherstone_1_oval.jpg"
+	setcycle 15 probe "Google_1_Arthur Featherstone_1_oval.jpg"
+	setcycle 16 Memorable 1
+	setcycle 16 Repetition 0
+	setcycle 16 interval 1000
+	setcycle 16 image "Google_1_George Baum_1_oval.jpg"
+	setcycle 16 probe "Google_1_Henry Dominguez_9_oval.jpg"
+	setcycle 17 Memorable 0
+	setcycle 17 Repetition 0
+	setcycle 17 interval 600
+	setcycle 17 image "Google_1_Sara Guajardo_1_oval.jpg"
+	setcycle 17 probe "Google_1_Ramona Thornburg_1_oval.jpg"
+	setcycle 18 Memorable 1
+	setcycle 18 Repetition 1
+	setcycle 18 interval 600
+	setcycle 18 image "Google_1_Sean Revels_7_oval.jpg"
+	setcycle 18 probe "Google_1_Sean Revels_7_oval.jpg"
+	setcycle 19 Memorable 1
+	setcycle 19 Repetition 1
+	setcycle 19 interval 1000
+	setcycle 19 image "Brandon_Kunkel_9_oval.jpg"
+	setcycle 19 probe "Brandon_Kunkel_9_oval.jpg"
+	setcycle 20 Memorable 0
+	setcycle 20 Repetition 1
+	setcycle 20 interval 600
+	setcycle 20 image "Google_1_Sherri Vineyard_9_oval.jpg"
+	setcycle 20 probe "Google_1_Sherri Vineyard_9_oval.jpg"
+	setcycle 21 Memorable 1
+	setcycle 21 Repetition 0
+	setcycle 21 interval 1200
+	setcycle 21 image "Google_1_Stanley Easton_7_oval.jpg"
+	setcycle 21 probe "Google_1_Sylvia Sprouse_11_oval.jpg"
+	setcycle 22 Memorable 1
+	setcycle 22 Repetition 0
+	setcycle 22 interval 1000
+	setcycle 22 image "Google_1_Nicole Canada_3_oval.jpg"
+	setcycle 22 probe "Google_1_Debra Jankowski_17_oval.jpg"
+	setcycle 23 Memorable 0
+	setcycle 23 Repetition 0
+	setcycle 23 interval 1200
+	setcycle 23 image "Google_1_Kristen Barfield_15_oval.jpg"
+	setcycle 23 probe "Adam_Koester_6_oval.jpg"
+	setcycle 24 Memorable 0
+	setcycle 24 Repetition 0
+	setcycle 24 interval 1200
+	setcycle 24 image "Google_1_Jeffrey Watson_1_oval.jpg"
+	setcycle 24 probe "Google_1_Rosalie May_17_oval.jpg"
+	setcycle 25 Memorable 0
+	setcycle 25 Repetition 1
+	setcycle 25 interval 800
+	setcycle 25 image "Google_1_Philip Finkelstein_3_oval.jpg"
+	setcycle 25 probe "Google_1_Philip Finkelstein_3_oval.jpg"
+	setcycle 26 Memorable 0
+	setcycle 26 Repetition 1
+	setcycle 26 interval 1200
+	setcycle 26 image "Google_1_Debra Manion_15_oval.jpg"
+	setcycle 26 probe "Google_1_Debra Manion_15_oval.jpg"
+	setcycle 27 Memorable 1
+	setcycle 27 Repetition 1
+	setcycle 27 interval 800
+	setcycle 27 image "Google_1_Susie Hodgkins_7_oval.jpg"
+	setcycle 27 probe "Google_1_Susie Hodgkins_7_oval.jpg"
+	setcycle 28 Memorable 0
+	setcycle 28 Repetition 0
+	setcycle 28 interval 800
+	setcycle 28 image "Google_1_Bruce Raab_15_oval.jpg"
+	setcycle 28 probe "Google_1_Randy Gary_3_oval.jpg"
+	setcycle 29 Memorable 1
+	setcycle 29 Repetition 1
+	setcycle 29 interval 600
+	setcycle 29 image "Google_1_Belinda Steib_3_oval.jpg"
+	setcycle 29 probe "Google_1_Belinda Steib_3_oval.jpg"
+	setcycle 30 Memorable 0
+	setcycle 30 Repetition 0
+	setcycle 30 interval 800
+	setcycle 30 image "Google_1_Ronald Swaim_11_oval.jpg"
+	setcycle 30 probe "Google_1_Mark Shilling_1_oval.jpg"
+	setcycle 31 Memorable 0
+	setcycle 31 Repetition 1
+	setcycle 31 interval 1000
+	setcycle 31 image "Google_1_Megan Gattis_5_oval.jpg"
+	setcycle 31 probe "Google_1_Megan Gattis_5_oval.jpg"
+	run trial_sequence
+
+define loop block3_loop
+	set source table
+	set repeat 1
+	set order sequential
+	set description "Repeatedly runs another item"
+	set cycles 32
+	set continuous no
+	set break_if_on_first yes
+	set break_if never
+	setcycle 0 Memorable 0
+	setcycle 0 Repetition 0
+	setcycle 0 interval 1200
+	setcycle 0 image "Google_1_Victor Garmon_19_oval.jpg"
+	setcycle 0 probe "Google_1_Matthew Laroche_1_oval.jpg"
+	setcycle 1 Memorable 0
+	setcycle 1 Repetition 0
+	setcycle 1 interval 1000
+	setcycle 1 image "Google_1_Rodney Upton_3_oval.jpg"
+	setcycle 1 probe "Google_1_Jonathan Crosby_11_oval.jpg"
+	setcycle 2 Memorable 1
+	setcycle 2 Repetition 0
+	setcycle 2 interval 800
+	setcycle 2 image "Google_1_Paul Keck_5_oval.jpg"
+	setcycle 2 probe "Alberta_Herbst_3_oval.jpg"
+	setcycle 3 Memorable 0
+	setcycle 3 Repetition 0
+	setcycle 3 interval 600
+	setcycle 3 image "Google_1_Marguerite Woodward_3_oval.jpg"
+	setcycle 3 probe "Google_1_Bobby Andrews_13_oval.jpg"
+	setcycle 4 Memorable 1
+	setcycle 4 Repetition 1
+	setcycle 4 interval 800
+	setcycle 4 image "Google_1_Valerie Hudspeth_12_oval.jpg"
+	setcycle 4 probe "Google_1_Valerie Hudspeth_12_oval.jpg"
+	setcycle 5 Memorable 1
+	setcycle 5 Repetition 0
+	setcycle 5 interval 800
+	setcycle 5 image "Google_1_Judy Chao_11_oval.jpg"
+	setcycle 5 probe "Google_1_Randy Towne_1_oval.jpg"
+	setcycle 6 Memorable 0
+	setcycle 6 Repetition 0
+	setcycle 6 interval 1200
+	setcycle 6 image "Google_1_Nora Stephenson_7_oval.jpg"
+	setcycle 6 probe "Google_1_Juan Keyes_5_oval.jpg"
+	setcycle 7 Memorable 1
+	setcycle 7 Repetition 1
+	setcycle 7 interval 800
+	setcycle 7 image "Google_1_Claire Muniz_3_oval.jpg"
+	setcycle 7 probe "Google_1_Claire Muniz_3_oval.jpg"
+	setcycle 8 Memorable 1
+	setcycle 8 Repetition 1
+	setcycle 8 interval 800
+	setcycle 8 image "Google_1_Becky Richmond_3_oval.jpg"
+	setcycle 8 probe "Google_1_Becky Richmond_3_oval.jpg"
+	setcycle 9 Memorable 1
+	setcycle 9 Repetition 0
+	setcycle 9 interval 800
+	setcycle 9 image "Google_1_John Ingraham_5_oval.jpg"
+	setcycle 9 probe "Google_1_Ellen Singer_1_oval (2).jpg"
+	setcycle 10 Memorable 1
+	setcycle 10 Repetition 1
+	setcycle 10 interval 1200
+	setcycle 10 image "Google_1_Roy Roberson_18_oval.jpg"
+	setcycle 10 probe "Google_1_Roy Roberson_18_oval.jpg"
+	setcycle 11 Memorable 0
+	setcycle 11 Repetition 0
+	setcycle 11 interval 1200
+	setcycle 11 image "Google_1_Joe Claxton_9_oval.jpg"
+	setcycle 11 probe "Google_1_Samuel Mcalister_3_oval.jpg"
+	setcycle 12 Memorable 1
+	setcycle 12 Repetition 0
+	setcycle 12 interval 600
+	setcycle 12 image "Google_1_Olivia Browning_7_oval.jpg"
+	setcycle 12 probe "Google_1_Darlene Perrone_13_oval.jpg"
+	setcycle 13 Memorable 0
+	setcycle 13 Repetition 1
+	setcycle 13 interval 800
+	setcycle 13 image "Google_1_Joseph Sandifer_17_oval.jpg"
+	setcycle 13 probe "Google_1_Joseph Sandifer_17_oval.jpg"
+	setcycle 14 Memorable 1
+	setcycle 14 Repetition 1
+	setcycle 14 interval 800
+	setcycle 14 image "Google_1_Lucy Neese_19_oval.jpg"
+	setcycle 14 probe "Google_1_Lucy Neese_19_oval.jpg"
+	setcycle 15 Memorable 0
+	setcycle 15 Repetition 1
+	setcycle 15 interval 600
+	setcycle 15 image "Google_1_Becky Richmond_1_oval.jpg"
+	setcycle 15 probe "Google_1_Becky Richmond_1_oval.jpg"
+	setcycle 16 Memorable 0
+	setcycle 16 Repetition 0
+	setcycle 16 interval 600
+	setcycle 16 image "Google_1_Carlos Hatten_1_oval.jpg"
+	setcycle 16 probe "Google_1_Sean Elder_15_oval.jpg"
+	setcycle 17 Memorable 1
+	setcycle 17 Repetition 1
+	setcycle 17 interval 1200
+	setcycle 17 image "Google_1_Hilda Colston_11_oval.jpg"
+	setcycle 17 probe "Google_1_Hilda Colston_11_oval.jpg"
+	setcycle 18 Memorable 1
+	setcycle 18 Repetition 1
+	setcycle 18 interval 1000
+	setcycle 18 image "Google_1_Kayla Tedder_9_oval.jpg"
+	setcycle 18 probe "Google_1_Kayla Tedder_9_oval.jpg"
+	setcycle 19 Memorable 0
+	setcycle 19 Repetition 0
+	setcycle 19 interval 800
+	setcycle 19 image "Google_1_Donald Shaw_13_oval.jpg"
+	setcycle 19 probe "Google_1_Maxine Mcnulty_3_oval.jpg"
+	setcycle 20 Memorable 1
+	setcycle 20 Repetition 0
+	setcycle 20 interval 1200
+	setcycle 20 image "Google_1_Alan Epley_12_oval.jpg"
+	setcycle 20 probe "Google_1_Russell Gillam_17_oval.jpg"
+	setcycle 21 Memorable 0
+	setcycle 21 Repetition 0
+	setcycle 21 interval 600
+	setcycle 21 image "Google_1_Jeff Durden_3_oval.jpg"
+	setcycle 21 probe "Google_1_Rosemary Greenway_17_oval.jpg"
+	setcycle 22 Memorable 0
+	setcycle 22 Repetition 1
+	setcycle 22 interval 800
+	setcycle 22 image "Google_1_Craig Zajac_17_oval.jpg"
+	setcycle 22 probe "Google_1_Craig Zajac_17_oval.jpg"
+	setcycle 23 Memorable 1
+	setcycle 23 Repetition 1
+	setcycle 23 interval 800
+	setcycle 23 image "Google_1_Curtis Botello_12_oval.jpg"
+	setcycle 23 probe "Google_1_Curtis Botello_12_oval.jpg"
+	setcycle 24 Memorable 1
+	setcycle 24 Repetition 1
+	setcycle 24 interval 1000
+	setcycle 24 image "Google_1_Megan Ballard_3_oval.jpg"
+	setcycle 24 probe "Google_1_Megan Ballard_3_oval.jpg"
+	setcycle 25 Memorable 1
+	setcycle 25 Repetition 1
+	setcycle 25 interval 1000
+	setcycle 25 image "Google_1_Harry Merriweather_3_oval.jpg"
+	setcycle 25 probe "Google_1_Harry Merriweather_3_oval.jpg"
+	setcycle 26 Memorable 0
+	setcycle 26 Repetition 0
+	setcycle 26 interval 1200
+	setcycle 26 image "Google_1_Todd Dunleavy_9_oval.jpg"
+	setcycle 26 probe "Google_1_Colleen Summer_5_oval.jpg"
+	setcycle 27 Memorable 1
+	setcycle 27 Repetition 0
+	setcycle 27 interval 1200
+	setcycle 27 image "Google_1_Steve Streeter_19_oval.jpg"
+	setcycle 27 probe "Google_1_Kara Goldberg_11_oval.jpg"
+	setcycle 28 Memorable 0
+	setcycle 28 Repetition 0
+	setcycle 28 interval 600
+	setcycle 28 image "Google_1_Rachel Hope_12_oval.jpg"
+	setcycle 28 probe "Google_1_Allison Baldridge_9_oval.jpg"
+	setcycle 29 Memorable 0
+	setcycle 29 Repetition 0
+	setcycle 29 interval 1200
+	setcycle 29 image "Google_1_Joe Amaral_3_oval.jpg"
+	setcycle 29 probe "Google_1_Maureen Galloway_5_oval.jpg"
+	setcycle 30 Memorable 1
+	setcycle 30 Repetition 1
+	setcycle 30 interval 600
+	setcycle 30 image "Google_1_Louis Irons_13-oval.jpg"
+	setcycle 30 probe "Google_1_Louis Irons_13-oval.jpg"
+	setcycle 31 Memorable 1
+	setcycle 31 Repetition 0
+	setcycle 31 interval 800
+	setcycle 31 image "Google_1_Patrick Clyburn_16_oval.jpg"
+	setcycle 31 probe "Google_1_Hannah Ouellette_7_oval.jpg"
+	run trial_sequence
+
+define loop block4_loop
+	set source table
+	set repeat 1
+	set order sequential
+	set description "Repeatedly runs another item"
+	set cycles 32
+	set continuous no
+	set break_if_on_first yes
+	set break_if never
+	setcycle 0 Memorable 1
+	setcycle 0 Repetition 0
+	setcycle 0 interval 800
+	setcycle 0 image "Google_1_Vera Hwang_7_oval.jpg"
+	setcycle 0 probe "Google_1_Sherry Mcmichael_11_oval.jpg"
+	setcycle 1 Memorable 0
+	setcycle 1 Repetition 1
+	setcycle 1 interval 1000
+	setcycle 1 image "Google_1_Sara Simpson_17_oval.jpg"
+	setcycle 1 probe "Google_1_Sara Simpson_17_oval.jpg"
+	setcycle 2 Memorable 0
+	setcycle 2 Repetition 1
+	setcycle 2 interval 1000
+	setcycle 2 image "Google_1_Tina Dasilva_9_oval.jpg"
+	setcycle 2 probe "Google_1_Tina Dasilva_9_oval.jpg"
+	setcycle 3 Memorable 1
+	setcycle 3 Repetition 0
+	setcycle 3 interval 1000
+	setcycle 3 image "Google_1_Ralph Ostrom_5_oval.jpg"
+	setcycle 3 probe "Google_1_James Schick_11_oval.jpg"
+	setcycle 4 Memorable 0
+	setcycle 4 Repetition 1
+	setcycle 4 interval 1000
+	setcycle 4 image "Google_1_Sean Lane_3_oval.jpg"
+	setcycle 4 probe "Google_1_Sean Lane_3_oval.jpg"
+	setcycle 5 Memorable 1
+	setcycle 5 Repetition 1
+	setcycle 5 interval 1200
+	setcycle 5 image "Google_1_Scott Clayton_15_oval.jpg"
+	setcycle 5 probe "Google_1_Scott Clayton_15_oval.jpg"
+	setcycle 6 Memorable 1
+	setcycle 6 Repetition 1
+	setcycle 6 interval 600
+	setcycle 6 image "Google_1_Larry Schnell_7_oval.jpg"
+	setcycle 6 probe "Google_1_Larry Schnell_7_oval.jpg"
+	setcycle 7 Memorable 0
+	setcycle 7 Repetition 0
+	setcycle 7 interval 1000
+	setcycle 7 image "Google_1_Virginia Roll_3_oval.jpg"
+	setcycle 7 probe "Google_1_Ronald Rey_3_oval.jpg"
+	setcycle 8 Memorable 1
+	setcycle 8 Repetition 1
+	setcycle 8 interval 600
+	setcycle 8 image "Google_1_Paul Wold_1_oval.jpg"
+	setcycle 8 probe "Google_1_Paul Wold_1_oval.jpg"
+	setcycle 9 Memorable 1
+	setcycle 9 Repetition 1
+	setcycle 9 interval 1000
+	setcycle 9 image "Google_1_Gregory Argueta_5-oval.jpg"
+	setcycle 9 probe "Google_1_Gregory Argueta_5-oval.jpg"
+	setcycle 10 Memorable 0
+	setcycle 10 Repetition 0
+	setcycle 10 interval 800
+	setcycle 10 image "Google_1_Bessie Wolfe_19_oval.jpg"
+	setcycle 10 probe "Google_1_Verna Damato_1_oval.jpg"
+	setcycle 11 Memorable 1
+	setcycle 11 Repetition 0
+	setcycle 11 interval 1000
+	setcycle 11 image "Google_1_Carlos Coker_9_oval.jpg"
+	setcycle 11 probe "Google_1_Daniel Harvey_7_oval.jpg"
+	setcycle 12 Memorable 1
+	setcycle 12 Repetition 0
+	setcycle 12 interval 1000
+	setcycle 12 image "Google_1_Ana Brooker_9_oval.jpg"
+	setcycle 12 probe "Allen_Hollingshead_7_oval.jpg"
+	setcycle 13 Memorable 1
+	setcycle 13 Repetition 0
+	setcycle 13 interval 1000
+	setcycle 13 image "Google_1_Alison Trejo_9_oval.jpg"
+	setcycle 13 probe "Google_1_Joy Loomis_19_oval.jpg"
+	setcycle 14 Memorable 0
+	setcycle 14 Repetition 0
+	setcycle 14 interval 800
+	setcycle 14 image "Google_1_Douglas Devaney_7_oval.jpg"
+	setcycle 14 probe "Google_1_Lisa Rabideau_11_oval.jpg"
+	setcycle 15 Memorable 0
+	setcycle 15 Repetition 1
+	setcycle 15 interval 800
+	setcycle 15 image "Google_1_Diane Boatwright_1_oval.jpg"
+	setcycle 15 probe "Google_1_Diane Boatwright_1_oval.jpg"
+	setcycle 16 Memorable 0
+	setcycle 16 Repetition 0
+	setcycle 16 interval 1000
+	setcycle 16 image "Google_1_Rodney Lawton_1_oval.jpg"
+	setcycle 16 probe "Google_1_Mark Maxwell_1_oval.jpg"
+	setcycle 17 Memorable 0
+	setcycle 17 Repetition 0
+	setcycle 17 interval 1000
+	setcycle 17 image "Google_1_Robert Pyles_1_oval.jpg"
+	setcycle 17 probe "Google_1_Jeffrey Chao_1_oval.jpg"
+	setcycle 18 Memorable 1
+	setcycle 18 Repetition 0
+	setcycle 18 interval 600
+	setcycle 18 image "Google_1_Wendy Wortham_5_oval.jpg"
+	setcycle 18 probe "Google_1_Norman Lebeau_9_oval.jpg"
+	setcycle 19 Memorable 1
+	setcycle 19 Repetition 0
+	setcycle 19 interval 600
+	setcycle 19 image "Google_1_Beatrice Mark_1_oval.jpg"
+	setcycle 19 probe "Google_1_Blanche Albaugh_5_oval.jpg"
+	setcycle 20 Memorable 1
+	setcycle 20 Repetition 1
+	setcycle 20 interval 800
+	setcycle 20 image "Google_1_Rachel Espinosa_7_oval (2).jpg"
+	setcycle 20 probe "Google_1_Rachel Espinosa_7_oval (2).jpg"
+	setcycle 21 Memorable 1
+	setcycle 21 Repetition 0
+	setcycle 21 interval 800
+	setcycle 21 image "Google_1_Benjamin Mcshane_15_oval.jpg"
+	setcycle 21 probe "Google_1_Cynthia Futrell_1_oval.jpg"
+	setcycle 22 Memorable 1
+	setcycle 22 Repetition 1
+	setcycle 22 interval 600
+	setcycle 22 image "Google_1_Gary Sartain_9_oval.jpg"
+	setcycle 22 probe "Google_1_Gary Sartain_9_oval.jpg"
+	setcycle 23 Memorable 0
+	setcycle 23 Repetition 0
+	setcycle 23 interval 600
+	setcycle 23 image "Google_1_Roy Hazzard_19_oval.jpg"
+	setcycle 23 probe "Google_1_Tanya Boudreau_10_oval.jpg"
+	setcycle 24 Memorable 1
+	setcycle 24 Repetition 0
+	setcycle 24 interval 800
+	setcycle 24 image "Google_1_Iris Gause_3_oval.jpg"
+	setcycle 24 probe "Google_1_Christopher Holladay_15_oval.jpg"
+	setcycle 25 Memorable 1
+	setcycle 25 Repetition 0
+	setcycle 25 interval 1200
+	setcycle 25 image "Google_1_Erika Fletcher_1_oval.jpg"
+	setcycle 25 probe "Google_1_Phillip Ledezma_17_oval.jpg"
+	setcycle 26 Memorable 1
+	setcycle 26 Repetition 0
+	setcycle 26 interval 600
+	setcycle 26 image "Alma_Melanson_1_oval.jpg"
+	setcycle 26 probe "Google_1_Gary Scheffler_3_oval.jpg"
+	setcycle 27 Memorable 0
+	setcycle 27 Repetition 0
+	setcycle 27 interval 600
+	setcycle 27 image "Google_1_Sean Hazel_1_oval.jpg"
+	setcycle 27 probe "Google_1_James Fogg_7_oval.jpg"
+	setcycle 28 Memorable 0
+	setcycle 28 Repetition 0
+	setcycle 28 interval 1000
+	setcycle 28 image "Google_1_Allen Aubin_5_oval.jpg"
+	setcycle 28 probe "Google_1_Gary Nance_3_oval.jpg"
+	setcycle 29 Memorable 1
+	setcycle 29 Repetition 1
+	setcycle 29 interval 800
+	setcycle 29 image "Audrey_Rosenbaum_10_oval.jpg"
+	setcycle 29 probe "Audrey_Rosenbaum_10_oval.jpg"
+	setcycle 30 Memorable 0
+	setcycle 30 Repetition 1
+	setcycle 30 interval 600
+	setcycle 30 image "Google_1_Arthur Albright_5_oval.jpg"
+	setcycle 30 probe "Google_1_Arthur Albright_5_oval.jpg"
+	setcycle 31 Memorable 0
+	setcycle 31 Repetition 1
+	setcycle 31 interval 800
+	setcycle 31 image "Google_1_Douglas Ziegler_17_oval.jpg"
+	setcycle 31 probe "Google_1_Douglas Ziegler_17_oval.jpg"
+	run trial_sequence
+
+define loop block5_loop
+	set source table
+	set repeat 1
+	set order sequential
+	set description "Repeatedly runs another item"
+	set cycles 32
+	set continuous no
+	set break_if_on_first yes
+	set break_if never
+	setcycle 0 Memorable "Google_1_Katrina Barham_5_oval.jpg"
+	setcycle 0 Memorable_1 0
+	setcycle 0 Repetition 1
+	setcycle 0 interval 600
+	setcycle 0 image "Google_1_Steve Goldsmith_1_oval.jpg"
+	setcycle 0 probe "Google_1_Steve Goldsmith_1_oval.jpg"
+	setcycle 1 Memorable "Google_1_Jo Snook_7_oval.jpg"
+	setcycle 1 Memorable_1 0
+	setcycle 1 Repetition 1
+	setcycle 1 interval 1000
+	setcycle 1 image "Google_1_Keith Conn_5_oval.jpg"
+	setcycle 1 probe "Google_1_Keith Conn_5_oval.jpg"
+	setcycle 2 Memorable "Google_1_Susie Hodgkins_7_oval.jpg"
+	setcycle 2 Memorable_1 1
+	setcycle 2 Repetition 0
+	setcycle 2 interval 800
+	setcycle 2 image "Google_1_Martha Abbate_3_oval.jpg"
+	setcycle 2 probe "Google_1_Shelia Chapman_3_oval.jpg"
+	setcycle 3 Memorable "Google_1_Glenn Leyba_19_oval.jpg"
+	setcycle 3 Memorable_1 0
+	setcycle 3 Repetition 1
+	setcycle 3 interval 1000
+	setcycle 3 image "Google_1_Chris Lykins_9_oval.jpg"
+	setcycle 3 probe "Google_1_Chris Lykins_9_oval.jpg"
+	setcycle 4 Memorable "Google_1_Rhonda Lavelle_17_oval.jpg"
+	setcycle 4 Memorable_1 1
+	setcycle 4 Repetition 0
+	setcycle 4 interval 600
+	setcycle 4 image "Google_1_Daniel Moorer_1_oval.jpg"
+	setcycle 4 probe "Google_1_Susan Sanabria_9_oval.jpg"
+	setcycle 5 Memorable "Google_1_Louis Cisneros_5_oval.jpg"
+	setcycle 5 Memorable_1 0
+	setcycle 5 Repetition 1
+	setcycle 5 interval 1000
+	setcycle 5 image "Google_1_Robyn Pineda_11_oval.jpg"
+	setcycle 5 probe "Google_1_Robyn Pineda_11_oval.jpg"
+	setcycle 6 Memorable "Google_1_Sarah Woodcock_3_oval.jpg"
+	setcycle 6 Memorable_1 1
+	setcycle 6 Repetition 0
+	setcycle 6 interval 1000
+	setcycle 6 image "Google_1_Jeffrey Goodman_3_oval.jpg"
+	setcycle 6 probe "Google_1_Adam Freund_13_oval.jpg"
+	setcycle 7 Memorable "Google_1_Peter Dillion_13_oval.jpg"
+	setcycle 7 Memorable_1 1
+	setcycle 7 Repetition 1
+	setcycle 7 interval 800
+	setcycle 7 image "Google_1_Florence Lott_19_oval.jpg"
+	setcycle 7 probe "Google_1_Florence Lott_19_oval.jpg"
+	setcycle 8 Memorable "Blanca_Shank_11_oval.jpg"
+	setcycle 8 Memorable_1 0
+	setcycle 8 Repetition 1
+	setcycle 8 interval 1200
+	setcycle 8 image "Google_1_Adam Mckinley_7_oval.jpg"
+	setcycle 8 probe "Google_1_Adam Mckinley_7_oval.jpg"
+	setcycle 9 Memorable "Google_1_Timothy Rayborn_12_oval.jpg"
+	setcycle 9 Memorable_1 0
+	setcycle 9 Repetition 0
+	setcycle 9 interval 1000
+	setcycle 9 image "Google_1_Philip Parkman_19_oval.jpg"
+	setcycle 9 probe "Google_1_Angie Bruner_1_oval.jpg"
+	setcycle 10 Memorable "Google_1_James Hudak_5_oval.jpg"
+	setcycle 10 Memorable_1 0
+	setcycle 10 Repetition 0
+	setcycle 10 interval 1000
+	setcycle 10 image "Google_1_Joshua Matson_7_oval.jpg"
+	setcycle 10 probe "Google_1_Ryan Concepcion_19_oval.jpg"
+	setcycle 11 Memorable "Google_1_Jeffrey Overton_14_oval.jpg"
+	setcycle 11 Memorable_1 1
+	setcycle 11 Repetition 1
+	setcycle 11 interval 1000
+	setcycle 11 image "Google_1_Travis Streeter_11_oval.jpg"
+	setcycle 11 probe "Google_1_Travis Streeter_11_oval.jpg"
+	setcycle 12 Memorable "Google_1_Cecilia Schwarz_9_oval.jpg"
+	setcycle 12 Memorable_1 0
+	setcycle 12 Repetition 1
+	setcycle 12 interval 1200
+	setcycle 12 image "Anthony_Rimmer_11_oval.jpg"
+	setcycle 12 probe "Anthony_Rimmer_11_oval.jpg"
+	setcycle 13 Memorable "Google_1_Priscilla Briones_13_oval.jpg"
+	setcycle 13 Memorable_1 1
+	setcycle 13 Repetition 1
+	setcycle 13 interval 1200
+	setcycle 13 image "Google_1_Eric Lashley_6_oval.jpg"
+	setcycle 13 probe "Google_1_Eric Lashley_6_oval.jpg"
+	setcycle 14 Memorable "Google_1_Harry Bumgardner_1_oval.jpg"
+	setcycle 14 Memorable_1 1
+	setcycle 14 Repetition 1
+	setcycle 14 interval 1000
+	setcycle 14 image "Google_1_Martin Mcgill_3_oval.jpg"
+	setcycle 14 probe "Google_1_Martin Mcgill_3_oval.jpg"
+	setcycle 15 Memorable "Google_1_Maureen Groce_9_oval.jpg"
+	setcycle 15 Memorable_1 1
+	setcycle 15 Repetition 0
+	setcycle 15 interval 1200
+	setcycle 15 image "Google_1_Wendy Kroll_13_oval.jpg"
+	setcycle 15 probe "Google_1_Samuel Whittemore_3_oval.jpg"
+	setcycle 16 Memorable "Google_1_Jennie Leatherman_3_oval.jpg"
+	setcycle 16 Memorable_1 1
+	setcycle 16 Repetition 0
+	setcycle 16 interval 600
+	setcycle 16 image "Google_1_Rita Mckissick_3_oval.jpg"
+	setcycle 16 probe "Google_1_Philip Ibarra_9_oval.jpg"
+	setcycle 17 Memorable "Bridget_Blow_3_oval.jpg"
+	setcycle 17 Memorable_1 0
+	setcycle 17 Repetition 0
+	setcycle 17 interval 800
+	setcycle 17 image "Google_1_Patrick Kornegay_14_oval.jpg"
+	setcycle 17 probe "Google_1_Dale Sass_1_oval.jpg"
+	setcycle 18 Memorable "Google_1_Scott Irons_5_oval.jpg"
+	setcycle 18 Memorable_1 0
+	setcycle 18 Repetition 1
+	setcycle 18 interval 1200
+	setcycle 18 image "Google_1_Wanda Soukup_7_oval.jpg"
+	setcycle 18 probe "Google_1_Wanda Soukup_7_oval.jpg"
+	setcycle 19 Memorable "Google_1_Steve Jenks_1_oval.jpg"
+	setcycle 19 Memorable_1 1
+	setcycle 19 Repetition 0
+	setcycle 19 interval 1000
+	setcycle 19 image "Billy_Owings_11_oval.jpg"
+	setcycle 19 probe "Google_1_Maggie Schulz_11_oval.jpg"
+	setcycle 20 Memorable "Google_1_Gregory Stott_1_oval.jpg"
+	setcycle 20 Memorable_1 1
+	setcycle 20 Repetition 1
+	setcycle 20 interval 600
+	setcycle 20 image "Google_1_Flora Petro_5_oval.jpg"
+	setcycle 20 probe "Google_1_Flora Petro_5_oval.jpg"
+	setcycle 21 Memorable "Google_1_Stephen Masterson_7_oval.jpg"
+	setcycle 21 Memorable_1 1
+	setcycle 21 Repetition 1
+	setcycle 21 interval 600
+	setcycle 21 image "Google_1_Stephen Dunigan_3_oval.jpg"
+	setcycle 21 probe "Google_1_Stephen Dunigan_3_oval.jpg"
+	setcycle 22 Memorable "Google_1_Nicholas Judy_19_oval.jpg"
+	setcycle 22 Memorable_1 0
+	setcycle 22 Repetition 1
+	setcycle 22 interval 800
+	setcycle 22 image "Google_1_Jeffery Tilton_3_oval.jpg"
+	setcycle 22 probe "Google_1_Jeffery Tilton_3_oval.jpg"
+	setcycle 23 Memorable "Google_1_Randy Conlon_5_oval.jpg"
+	setcycle 23 Memorable_1 0
+	setcycle 23 Repetition 0
+	setcycle 23 interval 800
+	setcycle 23 image "Brandon_Anglin_11_oval.jpg"
+	setcycle 23 probe "Google_1_Douglas Covert_11_oval.jpg"
+	setcycle 24 Memorable "Google_1_Gregory Driggers_13_oval.jpg"
+	setcycle 24 Memorable_1 0
+	setcycle 24 Repetition 1
+	setcycle 24 interval 1200
+	setcycle 24 image "Google_1_Russell Loftin_17_oval.jpg"
+	setcycle 24 probe "Google_1_Russell Loftin_17_oval.jpg"
+	setcycle 25 Memorable "Google_1_Sean Revels_7_oval.jpg"
+	setcycle 25 Memorable_1 0
+	setcycle 25 Repetition 1
+	setcycle 25 interval 1000
+	setcycle 25 image "Google_1_Karen Markey_16_oval.jpg"
+	setcycle 25 probe "Google_1_Karen Markey_16_oval.jpg"
+	setcycle 26 Memorable ""
+	setcycle 26 Memorable_1 0
+	setcycle 26 Repetition 1
+	setcycle 26 interval 600
+	setcycle 26 image "Google_1_Vickie Muldoon_17_oval.jpg"
+	setcycle 26 probe "Google_1_Vickie Muldoon_17_oval.jpg"
+	setcycle 27 Memorable ""
+	setcycle 27 Memorable_1 0
+	setcycle 27 Repetition 1
+	setcycle 27 interval 800
+	setcycle 27 image "Google_1_Henry Kinsella_3_oval.jpg"
+	setcycle 27 probe "Google_1_Henry Kinsella_3_oval.jpg"
+	setcycle 28 Memorable ""
+	setcycle 28 Memorable_1 0
+	setcycle 28 Repetition 0
+	setcycle 28 interval 800
+	setcycle 28 image "Google_1_Dale Tolley_13_oval.jpg"
+	setcycle 28 probe "Google_1_Susan Mcroberts_19_oval.jpg"
+	setcycle 29 Memorable ""
+	setcycle 29 Memorable_1 1
+	setcycle 29 Repetition 0
+	setcycle 29 interval 1200
+	setcycle 29 image "Google_1_Amanda Hooten_17_oval.jpg"
+	setcycle 29 probe "Google_1_Alicia Mcgann_1_oval.jpg"
+	setcycle 30 Memorable ""
+	setcycle 30 Memorable_1 1
+	setcycle 30 Repetition 0
+	setcycle 30 interval 600
+	setcycle 30 image "Google_1_Nora Loeffler_7_oval.jpg"
+	setcycle 30 probe "Google_1_Juana Haag_15_oval.jpg"
+	setcycle 31 Memorable ""
+	setcycle 31 Memorable_1 0
+	setcycle 31 Repetition 0
+	setcycle 31 interval 1200
+	setcycle 31 image "Google_1_Maureen Groce_9_oval.jpg"
+	setcycle 31 probe "Google_1_Wayne Bray_17_oval.jpg"
+	run trial_sequence
+
+define sketchpad end_of_practice_sketchpad
+	set duration 1000
+	set description "Stimuli weergeven"
+	draw textline center=1 color=black font_bold=no font_family=mono font_italic=no font_size=24 html=yes show_if=True text="Practice is over...<br /><br />Before the experiment begins, first the scanner will start up. <br /><br />Thereafter, the experiment will start immediately.<br /><br />After a certain period of time, there will be a longer duration of the fixation point. <br /><br />This is normal, please stay focused for the next trial to start<br /><br />When you are ready press the button. " x=0 y=0 z_index=0
+
+define sketchpad end_sketchpad
+	set duration 10000
+	set description "Stimuli weergeven"
+	draw textline center=1 color=black font_bold=no font_family=mono font_italic=no font_size=24 html=yes show_if=True text="This was the experiment, thank you for participating" x=0 y=0 z_index=0
+
+define sequence experiment
+	set flush_keyboard yes
+	set description "Runs a number of items in sequence"
+	run instructions_sketchpad True
+	run instruction_2_sketchpad True
+	run new_1_sketchpad True
+	run practice_2_loop True
+	run end_of_practice_sketchpad True
+	run keypress_practice_sketchpad True
+	run waiting_scanner_sketchpad True
+	run trigger_scanner_keyboard_response True
+	run block1_loop True
+	run baseline_block_sketchpad True
+	run trigger_scanner_keyboard_response True
+	run new_logger True
+	run block2_loop True
+	run baseline_block_sketchpad True
+	run baseline_block_sketchpad True
+	run trigger_scanner_keyboard_response True
+	run block3_loop True
+	run baseline_block_sketchpad True
+	run new_logger True
+	run block4_loop True
+	run baseline_block_sketchpad True
+	run baseline_block_sketchpad True
+	run trigger_scanner_keyboard_response True
+	run new_logger True
+	run block5_loop True
+	run end_sketchpad True
+
+define sketchpad filler_quick_response_sketchpad
+	set duration 300
+	set description "Displays stimuli"
+	draw image center=1 file="[probe]" scale=1.4999999999999996 show_if=True x=0 y=0 z_index=0
+
+define sketchpad fixation_sketchpad
+	set duration 1000
+	set description "Displays stimuli"
+	draw fixdot color=black show_if=True style=default x=0 y=0 z_index=0
+
+define sketchpad instruction_2_sketchpad
+	set duration keypress
+	set description "Stimuli weergeven"
+	draw textline center=1 color=black font_bold=no font_family=mono font_italic=no font_size=24 html=yes show_if=True text="Now follows an overview of a trial:<br /><br />A fixation dot will appear.<br /><br />Directly after, a face will appear for a certain duration.<br /><br />After, the fixation dot will then reappear.<br /><br />Then the face reappears, press the button when you think the time has passed.<br /><br />Press the button to continue. " x=0 y=0 z_index=0
+
+define sketchpad instructions_sketchpad
+	set duration keypress
+	set description "Stimuli weergeven"
+	draw textline center=1 color=black font_bold=no font_family=mono font_italic=no font_size=24 html=yes show_if=True text="Welcome to our interval reproduction experiment.<br /><br />Please stay as still as possible while in the machine and only move the required finger.<br /><br />You will be estimating time interval durations.<br /><br />Press the button to continue. " x=0 y=0 z_index=0
+
+define sketchpad keypress_practice_sketchpad
+	set duration keypress
+	set description "Stimuli weergeven"
+	draw textline center=1 color=black font_bold=no font_family=mono font_italic=no font_size=24 html=yes show_if=True text="Practice is over...<br /><br />Before the experiment begins, first the scanner will start up. <br /><br />Thereafter, the experiment will start immediately.<br /><br />After a certain period of time, there will be a longer duration of the fixation point, which will be a cross (+). <br /><br />This is normal, please stay focused for the next trial to start<br /><br />When you are ready press the button. " x=0 y=0 z_index=0
+
+define sketchpad new_1_sketchpad
+	set duration keypress
+	set description "Stimuli weergeven"
+	draw textline center=1 color=black font_bold=no font_family=mono font_italic=no font_size=24 html=yes show_if=True text="First, you will do a practice round.<br /><br />During the practice trials, squares will be shown instead of faces.<br /><br />When you are ready press the button. <br />" x=0 y=0 z_index=0
+
+define sketchpad new_2_sketchpad
+	set duration 1000
+	set description "Displays stimuli"
+	draw fixdot color=black show_if=True style=default x=0 y=0 z_index=0
+
+define keyboard_response new_3_keyboard_response
+	set timeout 1800
+	set flush yes
+	set event_type keypress
+	set duration keypress
+	set description "Collects keyboard responses"
+
+define sketchpad new_3_sketchpad
+	set duration "[interval]"
+	set description "Displays stimuli"
+	draw rect color="#00aa00" fill=1 h=128 penwidth=1 show_if=True w=128 x=-64 y=-64 z_index=0
+
+define sketchpad new_4_sketchpad
+	set duration 500
+	set description "Displays stimuli"
+	draw fixdot color=white show_if=True style=default x=0 y=0 z_index=0
+
+define sketchpad new_5_sketchpad
+	set duration keypress
+	set description "Stimuli weergeven"
+	draw textline center=1 color=black font_bold=no font_family=mono font_italic=no font_size=24 html=yes show_if=True text="Now follows an overview of a trial:<br /><br />A fixation dot will appear.<br /><br />Directly after, a face will appear for a certain duration.<br /><br />After, the fixation dot will then reappear.<br /><br />Then the face reappears, press the button when you think the time has passed.<br /><br />Press the button to continue. " x=0 y=0 z_index=0
+
+define sketchpad new_7_sketchpad
+	set duration 200
+	set description "Displays stimuli"
+	draw rect color="#00aa00" fill=1 h=128 penwidth=1 show_if=True w=128 x=-64 y=-64 z_index=0
+
+define sketchpad new_8_sketchpad
+	set duration 0
+	set description "Displays stimuli"
+	draw rect color="#00aa00" fill=1 h=128 penwidth=1 show_if=True w=128 x=-64 y=-64 z_index=0
+
+define logger new_logger
+	set description "Logs experimental data"
+	set auto_log yes
+
+define loop practice_2_loop
+	set source table
+	set repeat 1
+	set order random
+	set description "Voert herhaaldelijk een ander item uit"
+	set cycles 10
+	set continuous no
+	set break_if_on_first yes
+	set break_if never
+	setcycle 0 interval 1200
+	setcycle 1 interval 400
+	setcycle 2 interval 600
+	setcycle 3 interval 1000
+	setcycle 4 interval 800
+	setcycle 5 interval 1200
+	setcycle 6 interval 400
+	setcycle 7 interval 600
+	setcycle 8 interval 1000
+	setcycle 9 interval 800
+	run practice_sequence
+
+define sequence practice_sequence
+	set flush_keyboard yes
+	set description "Voert een aantal items achter elkaar uit"
+	run new_2_sketchpad True
+	run new_3_sketchpad True
+	run new_4_sketchpad True
+	run new_7_sketchpad True
+	run new_8_sketchpad True
+	run new_3_keyboard_response True
+
+define sketchpad response_sketchpad
+	set duration 0
+	set description "Displays stimuli"
+	draw image center=1 file="[probe]" scale=1.4999999999999996 show_if=True x=0 y=0 z_index=0
+
+define keyboard_response trial_keyboard_response
+	set timeout 1700
+	set flush yes
+	set event_type keypress
+	set duration keypress
+	set description "Collects keyboard responses"
+	set allowed_responses "1;2;3;4"
+
+define sequence trial_sequence
+	set flush_keyboard yes
+	set description "Runs a number of items in sequence"
+	run fixation_sketchpad True
+	run Sample_interval_sketchpad True
+	run ISI_sketchpad True
+	run filler_quick_response_sketchpad True
+	run response_sketchpad True
+	run trial_keyboard_response True
+	run new_logger True
+
+define keyboard_response trigger_scanner_keyboard_response
+	set timeout infinite
+	set flush yes
+	set event_type keypress
+	set duration keypress
+	set description "Verzamelt toetsenbordreacties"
+	set allowed_responses 5
+
+define sketchpad waiting_scanner_sketchpad
+	set duration 0
+	set description "Stimuli weergeven"
+	draw textline center=1 color=black font_bold=no font_family=mono font_italic=no font_size=24 html=yes show_if=True text="Waiting for scanner..." x=0 y=0 z_index=0
+
