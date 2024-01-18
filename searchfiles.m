@@ -1,3 +1,6 @@
+%% Search Files function
+% Created by R.R. Nicolai, 11-01-2024
+
 function filelist = searchfiles(directory, expression, seperate)
 
 %% Description:
