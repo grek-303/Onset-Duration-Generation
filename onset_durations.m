@@ -24,12 +24,11 @@ for j = 1:length(files)
     
     
     % by accident for the last block the memorable condition was stored in a
-    % different variable called memorable_1, so we need to change this
-    % structure
+    % different variable called memorable_1, so we need to change this structure
     file.Memorable(132:end) = str2double(file.Memorable_1(132:end));
     
     % check if trial number in block is same as before, if so, this is the
-    % baseline period tracker (we should omit these trials, as they fuck up the log)
+    % baseline period tracker (we should omit these trials, as they mess up the log)
     logic_baseline = [true; diff(file.live_row) ~= 0]; 
     file = file(logic_baseline, :);
     
@@ -105,14 +104,14 @@ for j = 1:length(files)
         end
     end
     
+    % omitting the first row (headers) as these are not used in FSL 
     memorable_repeat = memorable_repeat(2:end,1:3);
     memorable_non_repeat = memorable_non_repeat(2:end,1:3);
     non_memorable_repeat = non_memorable_repeat(2:end,1:3);
     non_memorable_non_repeat = non_memorable_non_repeat(2:end,1:3);
     baseline = baseline(2:end,1:3);
 
-    % write cell arrays to txt files, can't be arsed to turn this into
-    % another loop
+    % write cell arrays to txt files
     
     filename = [subj_n,'_memorable_repeat.txt'];
     writecell(memorable_repeat,filename,'Delimiter','tab')
